@@ -68,9 +68,21 @@ export function AppDataProvider({ children }: { children: React.ReactNode }) {
       setSubscriptions((prev) => prev.map((s) => (s.id === id ? { ...s, status, updatedAt: new Date().toISOString() } : s)));
       const sub = subscriptions.find((s) => s.id === id);
       if (status === "Approved") {
-        push("success", "Subscription approved", `${sub?.apiOrProductName ?? "API"} subscription is now approved.`, );
+        push({
+          type: "Subscription Approved",
+          title: "Subscription approved",
+          message: `${sub?.apiOrProductName ?? "API"} subscription is now approved.`,
+          severity: "success",
+          link: "/subscriptions",
+        });
       } else if (status === "Rejected") {
-        push("warning", "Subscription rejected", `${sub?.apiOrProductName ?? "API"} subscription was rejected.`);
+        push({
+          type: "Subscription Rejected",
+          title: "Subscription rejected",
+          message: `${sub?.apiOrProductName ?? "API"} subscription was rejected.`,
+          severity: "warning",
+          link: "/subscriptions",
+        });
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
