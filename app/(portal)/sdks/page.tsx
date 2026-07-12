@@ -1,5 +1,5 @@
 "use client";
-import { Download, FileJson, FileCode, Terminal, ShieldCheck, KeySquare } from "lucide-react";
+import { Download, FileJson, FileCode, Terminal, ShieldCheck, KeySquare, type LucideIcon } from "lucide-react";
 import { PageHeader } from "@/components/common/PageHeader";
 import { Card, CardContent } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
@@ -9,7 +9,7 @@ import { SDKS, DEV_TOOLS } from "@/data/sdks";
 import { APIS } from "@/data/apis";
 import { buildOpenApiSpec } from "@/lib/openapi";
 
-const TOOL_ICONS: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+const TOOL_ICONS: Record<string, LucideIcon> = {
   postman: FileJson, insomnia: FileJson, "openapi-yaml": FileCode, "openapi-json": FileCode,
   "sample-apps": FileCode, quickstart: FileCode, cli: Terminal, "webhook-verify": ShieldCheck, "signature-gen": KeySquare,
 };
