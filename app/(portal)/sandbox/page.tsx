@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { RotateCcw, Plus, Wallet, ParkingSquare, Radio, Zap, Fuel, Undo2, Webhook } from "lucide-react";
+import { RotateCcw, Plus, Wallet, ParkingSquare, Radio, Zap, Fuel, Undo2, Webhook, type LucideIcon } from "lucide-react";
 import { PageHeader } from "@/components/common/PageHeader";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
@@ -199,7 +199,7 @@ export default function SandboxPage() {
   );
 }
 
-function SandboxActionButton({ icon: Icon, label, onClick }: { icon: React.ComponentType<{ size?: number }>; label: string; onClick: () => void }) {
+function SandboxActionButton({ icon: Icon, label, onClick }: { icon: LucideIcon; label: string; onClick: () => void }) {
   return (
     <button onClick={onClick} className="flex flex-col items-center gap-1.5 rounded-xl border border-charcoal-100 p-3 text-center text-[11px] font-medium transition hover:border-salik-400 hover:bg-salik-50 dark:border-charcoal-800 dark:hover:bg-salik-950/30">
       <Icon size={18} />
